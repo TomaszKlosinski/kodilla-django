@@ -1,0 +1,138 @@
+[
+{
+    "model": "maths.result",
+    "pk": 1,
+    "fields": {
+        "value": null,
+        "error": "ZeroDivisionError"
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 2,
+    "fields": {
+        "value": 3.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 3,
+    "fields": {
+        "value": 5.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 4,
+    "fields": {
+        "value": 10.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 5,
+    "fields": {
+        "value": 9.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 6,
+    "fields": {
+        "value": 100.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 7,
+    "fields": {
+        "value": 10000.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 8,
+    "fields": {
+        "value": 1010101.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 9,
+    "fields": {
+        "value": 3233.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 10,
+    "fields": {
+        "value": 123123.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 11,
+    "fields": {
+        "value": 99999.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 12,
+    "fields": {
+        "value": 11111.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 13,
+    "fields": {
+        "value": 2222.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 14,
+    "fields": {
+        "value": 3333.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 15,
+    "fields": {
+        "value": 444.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 16,
+    "fields": {
+        "value": 555.0,
+        "error": null
+    }
+},
+{
+    "model": "maths.result",
+    "pk": 17,
+    "fields": {
+        "value": 666.0,
+        "error": null
+    }
+}
+]
