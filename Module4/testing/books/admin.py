@@ -1,5 +1,5 @@
 from django.contrib import admin
-from books.models import Book, Author, Tag
+from books.models import Book, Author, Tag, Borrow
 
 class BookAdmin(admin.ModelAdmin):
    list_display = ["id", "title", "created", "created", "author_id"]
@@ -17,3 +17,8 @@ class AuthorAdmin(admin.ModelAdmin):
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
    list_display = ['id', 'word']
+
+
+@admin.register(Borrow)
+class BorrowAdmin(admin.ModelAdmin):
+   list_display = ['id', 'user', 'book_id', 'borrowed', 'returned', 'is_returned']
