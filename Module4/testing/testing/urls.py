@@ -19,6 +19,8 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .api import posts_router, books_router
+
 urlpatterns = [
     path('', include("infos.urls")),
     path('admin/', admin.site.urls),
@@ -28,6 +30,8 @@ urlpatterns = [
     path('greetings/', include("greetings.urls")),
     path('posts/', include("posts.urls")),
     path('books/', include("books.urls")),
+    path('api/v1/', include(posts_router.urls)),
+    path('api/v2/', include(books_router.urls)),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

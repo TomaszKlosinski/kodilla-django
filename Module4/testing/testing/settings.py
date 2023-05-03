@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     'django_bootstrap5',
     'django_bootstrap_breadcrumbs',
+    'rest_framework',
 
     'maths',
     'greetings',
