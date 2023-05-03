@@ -14,7 +14,7 @@ import os
 
 from pathlib import Path
 
-import django_heroku
+# import django_heroku
 
 # Bugfix for django_boostrap_breadcrumbs
 import django
@@ -149,4 +149,7 @@ LOGOUT_REDIRECT_URL = "/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
+
+# Repl config
+X_FRAME_OPTIONS = '*'
