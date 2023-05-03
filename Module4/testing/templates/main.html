@@ -26,6 +26,7 @@
               <a class="nav-link" href="/contact">Contact</a>
               <a class="nav-link" href="/maths">Maths</a>
               <a class="nav-link" href="/posts">Posts</a>
+              <a class="nav-link" href="/books">Books</a>
               {% if user.is_authenticated %}
               <p class="nav-link">
                   {{ user.username }} | <a href="{% url 'logout' %}">logout</a>

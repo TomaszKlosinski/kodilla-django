@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{% block title %}Book detail{% endblock %}
+
+{% block content %}
+<h1>{{ book.title }}</h1>
+<h2><a href="{% url "books:author" book.author_id.id %}">{{ book.author_id.name }}</a></h2>
+<h3>{{ book.created }}</h3>
+<br/>
+
+<div><img src="{{ book.image.url }}"></div>
+<br/>
+
+<a href="{% url "books:list" %}">back</a>
+{% endblock %}

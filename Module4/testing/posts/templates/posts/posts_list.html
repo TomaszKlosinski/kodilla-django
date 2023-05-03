@@ -1,18 +1,24 @@
 {% extends "main.html" %}
+{% load django_bootstrap5 %}
 
 {% block title %}Posts list{% endblock %}
 
 {% block content %}
    <ul>
        {% for p in posts %}
-           <li><a href="{% url "posts:post_details" p.id %}">{{ p }}</a></li>
+           <li><a href="{% url "posts:details" p.id %}">{{ p }}</a></li>
        {% endfor %}
    </ul>
    <br/>
-   New Post:
-   <form method="post">
-    {% csrf_token %}
-    {{ form.as_table }}
-    <input type="submit" value="go">
+
+{% if perms.posts.add_post %}
+  <h2>New Post</h2>
+  <form method="POST" enctype='multipart/form-data'>
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <input type="submit" value="Add">
     </form>
+{% endif %}
+
+
 {% endblock %}

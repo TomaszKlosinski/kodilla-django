@@ -1,5 +1,9 @@
 from django.contrib import admin
-from posts.models import Post, Author
+from posts.models import Post, Author, Tag
+...
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+   pass
 
 class PostAdmin(admin.ModelAdmin):
    list_display = ["id", "title", "content", "created", "modified", "author_id"]

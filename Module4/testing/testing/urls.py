@@ -16,13 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from django.http import HttpResponse
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include("infos.urls")),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('grappelli/', include('grappelli.urls')),
     path('maths/', include("maths.urls")),
     path('greetings/', include("greetings.urls")),
     path('posts/', include("posts.urls")),
+    path('books/', include("books.urls")),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

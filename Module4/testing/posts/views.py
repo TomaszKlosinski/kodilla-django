@@ -18,7 +18,7 @@ def posts_list(request):
    posts = Post.objects.all()
    form = PostForm()
    if request.method == "POST":
-       form = PostForm(data=request.POST)
+       form = PostForm(data=request.POST, files=request.FILES)
        if form.is_valid():
            form.save()
            messages.add_message(

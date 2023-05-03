@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block title %}Author detail{% endblock %}
+
+{% block content %}
+   <table>
+       <tr>
+           <th>Name</th>
+           <td>{{ author.name }}</td>
+       </tr>
+       <tr>
+           <th>Books</th>
+           <td>TODO</td>
+       </tr>
+   </table>
+   <br/>
+   <a href="{% url "books:authors" %}">back</a>
+{% endblock %}

@@ -3,28 +3,13 @@
 {% block title %}Post detail{% endblock %}
 
 {% block content %}
-   <table>
-       <tr>
-           <th>Titlle</th>
-           <td>{{ post.title }}</td>
-       </tr>
-       <tr>
-           <th>Author</th>
-           <td>{{ post.author_id.nick }}</td>
-       </tr>
-       <tr>
-           <th>Content</th>
-           <td>{{ post.content }}</td>
-       </tr>
-       <tr>
-           <th>Created:</th>
-           <td>{{ post.created }}</td>
-       </tr>
-       <tr>
-           <th>Modified:</th>
-           <td>{{ post.modified }}</td>
-       </tr>
-   </table>
-   <br/>
-   <a href="{% url "posts:posts_list" %}">back</a>
+<h1>{{ post.title }}</h1>
+<h2>{{ post.author.nick }} | {{ post.created }}</h2>
+<p>
+   {{ post.content }}
+</p>
+<div><img src="{{ post.image.url }}"></div>
+
+<br/>
+<a href="{% url "posts:posts_list" %}">back</a>
 {% endblock %}

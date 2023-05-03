@@ -7,8 +7,8 @@ class AuthorForm(forms.ModelForm):
         model = Author
         fields = "__all__"
 
-
 class PostForm(forms.ModelForm):
-    class Meta:
-        model = Post
-        fields = "__all__"
+   class Meta:
+       model = Post
+       fields = "__all__"
+       fields = ["title", "content", "author_id", "image", "tags"]

@@ -14,6 +14,11 @@ import os
 
 from pathlib import Path
 
+# Bugfix for django_boostrap_breadcrumbs
+import django
+from django.utils.encoding import smart_str
+django.utils.encoding.smart_text = smart_str
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,11 +46,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_bootstrap5',
+    'django_bootstrap_breadcrumbs',
+    'grappelli',
 
     'maths',
     'greetings',
     'posts',
     'infos',
+    'books',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +142,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Login/logout redirect URLs
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+# Media configuration
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
