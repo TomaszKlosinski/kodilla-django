@@ -10,7 +10,13 @@
        </tr>
        <tr>
            <th>Books</th>
-           <td>TODO</td>
+           <td>
+            <ul>
+                {% for b in author_books %}
+                    <li><a href="{% url "books:details" b.id %}">{{ b.title }}</a></li>
+                {% endfor %}
+            </ul>
+           </td>
        </tr>
    </table>
    <br/>

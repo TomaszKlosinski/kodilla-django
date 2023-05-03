@@ -40,8 +40,9 @@ def authors_list(request):
 
 def author_details(request, id):
    author = Author.objects.get(id=id)
+   author_books = Book.objects.filter(author_id=author.id)
    return render(
        request=request,
        template_name="books/author_details.html",
-       context={"author": author}
+       context={"author": author, "author_books": author_books}
    )
