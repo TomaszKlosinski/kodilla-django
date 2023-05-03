@@ -7,10 +7,10 @@ class IndexViewsTest(TestCase):
     def setUp(self):
         self.client = Client()
 
-    def test_authors_list(self):
+    def test_index(self):
         response = self.client.get("/posts/", follow=True)
         self.assertEqual(response.status_code, 200)
-        self.assertIn('<h2>Homepage</h2>', response.content.decode())
+        self.assertIn('<h1>Blog</h1>', response.content.decode())
 
 
 class AuthorViewsTest(TestCase):

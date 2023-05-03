@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 from .models import Math, Result
 
@@ -42,6 +43,9 @@ def div(request, a, b):
 
 def maths_list(request):
    maths = Math.objects.all()
+   paginator = Paginator(maths, 5)
+   page_number = request.GET.get('page')
+   maths = paginator.get_page(page_number)
    return render(
        request=request,
        template_name="maths/list.html",

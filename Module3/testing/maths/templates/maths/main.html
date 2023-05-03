@@ -1,14 +1,26 @@
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <title>{% block title %}Title{% endblock %}</title>
+
+   {% load static %}
+   <link rel="stylesheet" type="text/css" href="{% static 'maths/css/style.css' %}">
+
+   {# Load CSS and JavaScript #}
+   {% bootstrap_css %}
+   {% bootstrap_javascript jquery='full' %}
+
 </head>
 <body>
 <div id="content">
    <div id="header">
+       <img src="{% static 'maths/img/logo.svg' %}">
        To jest część stała szablonu głównego
    </div>
+
+   {% bootstrap_messages %}
    <div id="inner-content">
        {% block content %}
            To jest blok kodu. W innych szablonach możemy go nadpisać

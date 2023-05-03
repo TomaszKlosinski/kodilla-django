@@ -6,7 +6,7 @@ from posts.models import Post, Author
 from posts.forms import AuthorForm, PostForm
 
 def index(request):
-    c = {"title": "Homepage"}
+    c = {"title": "Welcome to blog posts app."}
     return render(
         request=request,
         template_name="posts/home.html",

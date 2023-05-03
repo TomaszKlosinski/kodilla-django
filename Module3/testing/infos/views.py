@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def greetings(request):
-   return HttpResponse("Hello World!")
 
-def greetings_name(request, name):
-    return HttpResponse(f'Hello World, {name.capitalize()}!')
-
+def index(request):
+    c = {"title": "Homepage"}
+    return render(
+        request=request,
+        template_name="infos/home.html",
+        context=c
+    )
 
 def about(request):
     c = {"title": "About me"}
