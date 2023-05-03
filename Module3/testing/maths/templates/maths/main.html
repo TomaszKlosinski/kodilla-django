@@ -16,8 +16,11 @@
 <body>
 <div id="content">
    <div id="header">
-       <img src="{% static 'maths/img/logo.svg' %}">
-       To jest część stała szablonu głównego
+        <img src="{% static 'maths/img/logo.svg' %}">
+        <ul>
+            <li><a href="/maths/histories">Histories</a>
+            <li><a href="/maths/results/">Results</a>
+        </ul>
    </div>
 
    {% bootstrap_messages %}

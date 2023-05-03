@@ -8,7 +8,12 @@ from .models import Math, Result
 
 
 def math(request):
-    return HttpResponse("Tu będzie matma")
+    c = {"title": "Homepage"}
+    return render(
+        request=request,
+        template_name="maths/home.html",
+        context=c
+    )
 
 
 def add(request, a, b):
