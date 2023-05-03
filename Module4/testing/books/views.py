@@ -5,6 +5,8 @@ from django.core.paginator import Paginator
 
 from books.models import Book, Author, Borrow
 
+from datetime import datetime
+
 
 def books_list(request):
    books = Book.objects.all()
@@ -58,4 +60,20 @@ def author_details(request, id):
        request=request,
        template_name="books/author_details.html",
        context={"author": author, "author_books": author_books}
+   )
+
+
+def borrows_list(request):
+   if request.method == 'POST' and 'borrow_id' in request.POST:
+       borrow = Borrow.objects.get(id=request.POST['borrow_id'])
+       borrow.is_returned = True
+       borrow.returned = datetime.now()
+       borrow.save()
+
+
+   borrows = Borrow.objects.filter(is_returned=False)
+   return render(
+       request=request,
+       template_name="books/borrows_list.html",
+       context={"borrows": borrows}
    )

@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block title %}Borrows list{% endblock %}
+
+{% block content %}
+   <ul>
+       {% for b in borrows %}
+           <li>
+            {{ b.book_id.title }}
+            <form method="POST" class="float-right">{% csrf_token %}
+            <input type="hidden" name="borrow_id" value="{{ b.id }}">
+            <button class="btn btn-success">Return</button></form>
+           </li>
+       {% endfor %}
+   </ul>
+
+   <br/>
+{% endblock %}
