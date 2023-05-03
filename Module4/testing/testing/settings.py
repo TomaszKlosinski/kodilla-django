@@ -38,6 +38,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,7 +49,6 @@ INSTALLED_APPS = [
 
     'django_bootstrap5',
     'django_bootstrap_breadcrumbs',
-    'grappelli',
 
     'maths',
     'greetings',
