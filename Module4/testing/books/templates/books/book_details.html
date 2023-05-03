@@ -11,5 +11,12 @@
 <div><img src="{{ book.image.url }}"></div>
 <br/>
 
+{% if borrowable %}
+<form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Borrow">
+</form>
+{% endif %}
+
 <a href="{% url "books:list" %}">back</a>
 {% endblock %}

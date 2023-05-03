@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.core.paginator import Paginator
 
-from books.models import Book, Author
+from books.models import Book, Author, Borrow
 
 
 def books_list(request):
@@ -22,10 +22,23 @@ def books_list(request):
 
 def book_details(request, id):
    book = Book.objects.get(id=id)
+   borrows = Borrow.objects.filter(book_id=book)
+
+   if request.method == "POST":
+       user = request.user
+       Borrow.objects.create(user=user, book_id=book)
+
+
+   borrowable = True
+   if borrows:
+       for b in borrows:
+           if not b.is_returned:
+               borrowable = False
+
    return render(
        request=request,
        template_name="books/book_details.html",
-       context={"book": book}
+       context={"book": book, "borrowable": borrowable}
    )
 
 

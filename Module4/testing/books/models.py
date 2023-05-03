@@ -35,4 +35,7 @@ class Borrow(models.Model):
    book_id = models.ForeignKey('books.Book', on_delete=models.CASCADE, null=True, blank=True)
    borrowed = models.DateTimeField(auto_now_add=True)
    returned = models.DateTimeField(null=True, blank=True)
-   is_returned = models.BooleanField()
+   is_returned = models.BooleanField(null=True, blank=True)
+
+   def __str__(self):
+        return f"id:{self.id}, user={self.user}, book_id={self.book_id}"
