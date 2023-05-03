@@ -9,11 +9,9 @@ from .models import Math, Result
 
 
 def math(request):
-    c = {"title": "Homepage"}
     return render(
         request=request,
-        template_name="maths/home.html",
-        context=c
+        template_name="maths/home.html"
     )
 
 

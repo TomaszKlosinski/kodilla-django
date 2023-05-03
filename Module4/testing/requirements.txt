@@ -5,7 +5,7 @@ backcall==0.2.0
 beautifulsoup4==4.12.2
 decorator==5.1.1
 Django==4.2
-django-bootstrap4==23.1
+django-bootstrap5==23.1
 executing==1.2.0
 ipython==8.13.1
 jedi==0.18.2
